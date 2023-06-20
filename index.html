@@ -11,6 +11,7 @@
             crossorigin="anonymous"
         />
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/newStyle.css" rel="stylesheet" />
     </head>
     <body>
         <header>
@@ -78,28 +79,45 @@
                 background-image: url('./img/hogwarts-legacy-video-game-magical-character-wallpaper-3840x2160_54.jpg');
             "
         >
-            <div class="color-overlay">
-                <div class="container mt-5" style="background-color: blue">
-                    <h1 id="titulo">Magos DuocUC</h1>
-                    <h2 id="subtitulo">Escuela de magia y hechicería</h2>
-                    <p id="relleno">
-                        Área mágica de DuocUC en la cual buscamos el desarrollo
-                        íntegro de todos nuestro estudiantes para un mañana
-                        mejor
-                    </p>
-                </div>
+            <div class="color-overlay mx-auto">
+                <div class="container mt-5 pt-5">
+                    <div style="width: 700px">
+                        <h1 class="titulo text-white fw-bold">
+                            MAGOS <span style="color: #ebaa1b">Duoc</span
+                            ><span style="color: #002138">UC</span>
+                        </h1>
+                        <h2 class="subtitulo fw-bold">
+                            Escuela de magia y hechicería
+                        </h2>
+                        <p class="texto text-white">
+                            Área mágica de DuocUC en la cual buscamos el
+                            desarrollo íntegro de todos nuestro estudiantes para
+                            un mañana mejor
+                        </p>
+                    </div>
 
-                <div class="container mt-5" style="background-color: red">
-                    <div class="row">
-                        <div class="col-2">
-                            <a href="hechizos.html" class="btn" id="hechizosBtn"
-                                >hechizos</a
-                            >
-                        </div>
-                        <div class="col-2">
-                            <a href="cursos.html" class="btn" id="cursosBtn"
-                                >cursos</a
-                            >
+                    <div class="text-center pt-4">
+                        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                        <div
+                            class="row row-cols-1 row-cols-sm-2 gy-4 gy-md-0 justify-content-start"
+                        >
+                            <div class="col d-flex align-items-start col-md-4">
+                                <button
+                                    type="button"
+                                    class="btn btn-warning btn-lg rounded-0 btn-size"
+                                >
+                                    HECHIZOS
+                                </button>
+                            </div>
+                            <div class="col d-flex align-items-start col-md-4">
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-light btn-lg rounded-0 btn-size"
+                                    style="outline: 15px"
+                                >
+                                    CURSOS
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

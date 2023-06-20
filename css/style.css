@@ -22,19 +22,9 @@ h3{
   background-color: rgba(8, 8, 44, 0.711);
 }
 
-/* Textos */
-#titulo{
-  font-family: "Lato", sans-serif;
-  color: white;
-  font-weight: bold;
-  font-size: 80px;
-}
 
-#subtitulo{
-  color: #FFB800;
-  font-family: "Lato", sans-serif;
-  font-weight: bold;
-}
+
+
 
 #relleno{
   color: #fff;
