@@ -1,21 +1,20 @@
-
 body {
-  background-color:#172542;
+  background-color: #172542;
 }
 
 
-h3{
+h3 {
   font-family: "Lato", sans-serif;
   font-weight: bold;
 }
 
 /* imagen */
-.fondo{
+.fondo {
   background-size: cover;
   min-height: 100vh;
 }
 
-.color-overlay{
+.color-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -26,14 +25,14 @@ h3{
 
 
 
-#relleno{
+#relleno {
   color: #fff;
   font-family: "Lato", sans-serif;
   font-weight: lighter;
 
 }
 
-#hechizosBtn{ 
+#hechizosBtn {
   font-family: "roboto", sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -52,7 +51,7 @@ h3{
   -webkit-transition-property: box-shadow, transform;
 }
 
-#cursosBtn{ 
+#cursosBtn {
   font-family: "roboto", sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -71,8 +70,59 @@ h3{
   -webkit-transition-property: box-shadow, transform;
 }
 
-.btn:hover, .btn:focus, .btn:active{
+.btn:hover,
+.btn:focus,
+.btn:active {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+.btn-size {
+  width: 350px;
+  aspect-ratio: 5/1;
+}
+
+/* Textos */
+.titulo {
+  font-family: "Lato", sans-serif;
+  font-size: 80px;
+}
+
+.subtitulo {
+  color: #FF9000;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.texto {
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.spell-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spell-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.spell-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.spell-description {
+  color: #666;
+  margin-bottom: 10px;
 }
