@@ -16,21 +16,11 @@
     </head>
 
     <body>
-
         <div id="header-container"></div>
 
-
-
-
-        <main>
-
-        </main>
-
-
-
+        <main></main>
 
         <div id="footer-container"></div>
-
 
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -44,8 +34,8 @@
         ></script>
         <script>
             // Cargar los componentes en los contenedores correspondientes
-            loadComponent("header.html", "header-container");
-            loadComponent("footer.html", "footer-container");
+            loadComponent("header.html", "header-container", "navbar-mensajes","active");
+            loadComponent("footer.html", "footer-container", "");
         </script>
     </body>
 </html>
