@@ -32,6 +32,24 @@ const hechizos = [
         descripcion:"Hechizo levitatorio",
         imagen:"img/hechizos/HM_Wingardium_Leviosa.webp"
     },
+    {   
+        id:"06",
+        nombre:"Petrificus Totalus",
+        descripcion:"Hechizo paralizador",
+        imagen:"img/hechizos/HM_Petrificus_Totalus.webp"
+    },
+    {   
+        id:"07",
+        nombre:"Desmaius",
+        descripcion:"Hechizo aturdidor",
+        imagen:"img/hechizos/HM_Desmaius.webp"
+    },
+    {   
+        id:"08",
+        nombre:"Lumos",
+        descripcion:"Hechizo de iluminación",
+        imagen:"img/hechizos/HM_Lumos.webp"
+    },
 ]
 
 const contenedorHechizos = document.querySelector("#contenedorHechizos");
