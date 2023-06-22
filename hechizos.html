@@ -19,8 +19,8 @@
         <div id="header-container" style="border-bottom: solid #ff9000"></div>
 
         <main>
-            <div class="container text-center mt-3">
-                <div class="row p-2" style="background-color: #fff;">
+            <div class="container-fluid text-center mt-3">
+                <div class="row p-2 ms-3 me-3" style="background-color: #fff;">
                     <div class="col">
                         <button class="btn btn-lg rounded-0">Defensivos</button>
                     </div>
@@ -40,9 +40,9 @@
             </div>
 
             <section class="row">
-                <aside class="col-2 mt-3 d-flex row row-cols-1" style="background-color: #fff; margin-left: 2%;">
+                <aside class="col-2 mt-3 mb-3 d-flex row row-cols-1" style="background-color: #fff; margin-left: 2%;">
                     <div class="col" style="margin-left: 10%;">
-                        <h2 class="mt-3" style="font-weight: bold;">Filtro</h2>
+                        <h2 class="mt-3" style="font-weight: bold;">FILTROS</h2>
                         <div class="form-check form-switch">
                             <input type="checkbox" class="form-check-input" value="" id="check1">
                             <label for="check1" class="form-check-label">Defensivo</label>
@@ -62,30 +62,28 @@
                     </div>
                 </aside>
                 <article class="col-8" style="margin-left: 2%;">
-                    <div class="container mt-3">
-                        <div class="card-group row row-cols-4 gy-4" id="contenedorHechizos">
-                        <!-- <div
-                            class="card rounded-0 d-flex align-items-center"
-                            style="width: 18rem"
-                        >
-                            <img
-                                src="img/hechizos/HM_Expelliarmus.webp"
-                                class="card-img-top mt-4 mb-2"
-                                style="width: 75%"
-                                alt="..."
-                            />
-                            <div class="card-body row row-cols-1">
-                                <h5 class="card-title" style="font-weight: bold">
-                                    Expelliarmus
-                                </h5>
-                                <p class="card-text">Hechizo desarmador</p>
-                                <a href="#" class="btn btn-primary mt-3 rounded-0"
-                                    >Aprender</a
-                                >
+                    <article>
+                        <div class="row d-flex mt-3" style="background-color: #fff;">
+                            <div class="col-8 m-2">
+                                <span>Ordenar por:</span>
+                                <button class="btn btn-outline-dark">↓</button>
                             </div>
-                        </div> -->
+                            <div class="col m-2">
+                                <span>Páginas: </span>
+                                <button class="btn btn-outline-dark">1</button>
+                                <button class="btn btn-outline-dark">2</button>
+                                <button class="btn btn-outline-dark">3</button>
+                                <button class="btn btn-outline-dark">4</button>
+                                <button class="btn ">→</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article>
+                    <div class="container mt-3 mb-3">
+                        <div class="card-group  row row-cols-4 gy-4" id="contenedorHechizos">
                         </div>
                     </div>
+                    </article>
                 </article>
             </section>
         </main>

@@ -60,7 +60,8 @@ function cargarHechizos() {
         const div = document.createElement("div");
         div.classList.add("hechizo")
         div.innerHTML = `
-        <div
+        <div class="col">
+            <div
                     class="card rounded-0 d-flex align-items-center"
                     style="width: 18rem"
                     id="${hechizo.id}"
@@ -80,7 +81,8 @@ function cargarHechizos() {
                             >Aprender</a
                         >
                     </div>
-                </div>
+            </div>
+        </div>
         `;
 
         contenedorHechizos.append(div);
@@ -88,3 +90,24 @@ function cargarHechizos() {
 }
 
 cargarHechizos();
+
+{/* <div
+class="card rounded-0 d-flex align-items-center"
+style="width: 18rem"
+>
+<img
+    src="img/hechizos/HM_Expelliarmus.webp"
+    class="card-img-top mt-4 mb-2"
+    style="width: 75%"
+    alt="..."
+/>
+<div class="card-body row row-cols-1">
+    <h5 class="card-title" style="font-weight: bold">
+        Expelliarmus
+    </h5>
+    <p class="card-text">Hechizo desarmador</p>
+    <a href="#" class="btn btn-primary mt-3 rounded-0"
+        >Aprender</a
+    >
+</div>
+</div> */}
