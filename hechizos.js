@@ -199,3 +199,54 @@ function filtrarHechizos() {
         cargarHechizos();
     }
 }
+// ahora lo mismo pero con los botones de arriba, y asi se activa el filtro
+
+const defensivoButton = document.getElementById("defensivo-button");
+const ofensivoButton = document.getElementById("ofensivo-button");
+const furtivoButton = document.getElementById("furtivo-button");
+const especialesButton = document.getElementById("especial-button");
+const curativoButton = document.getElementById("curativo-button");
+//obtener elementos a base de los checkbox
+defensivoButton.addEventListener("click", () => {
+    defensivoFilter.checked = true;
+    ofensivoFilter.checked = false;
+    furtivoFilter.checked = false;
+    especialesFilter.checked = false;
+    curativoFilter.checked = false;
+    filtrarHechizos();
+});
+
+ofensivoButton.addEventListener("click", () => {
+    defensivoFilter.checked = false;
+    ofensivoFilter.checked = true;
+    furtivoFilter.checked = false;
+    especialesFilter.checked = false;
+    curativoFilter.checked = false;
+    filtrarHechizos();
+});
+
+furtivoButton.addEventListener("click", () => {
+    defensivoFilter.checked = false;
+    ofensivoFilter.checked = false;
+    furtivoFilter.checked = true;
+    especialesFilter.checked = false;
+    curativoFilter.checked = false;
+    filtrarHechizos();
+});
+
+especialesButton.addEventListener("click", () => {
+    defensivoFilter.checked = false;
+    ofensivoFilter.checked = false;
+    furtivoFilter.checked = false;
+    especialesFilter.checked = true;
+    curativoFilter.checked = false;
+    filtrarHechizos();
+});
+curativoButton.addEventListener("click", () => {
+    defensivoFilter.checked = false;
+    ofensivoFilter.checked = false;
+    furtivoFilter.checked = false;
+    especialesFilter.checked = false;
+    curativoFilter.checked = true;
+    filtrarHechizos();
+});
