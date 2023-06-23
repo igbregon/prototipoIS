@@ -1,6 +1,6 @@
 const cursos = [
     {
-        id: 1,
+        id: '2023_1_SJ_ENCAV040_23944016_PCT',
         imagen: 'img/cursos/encantamientos2.jpg',
         titulo: 'Encantamientos avanzados',
         instructor: 'Filius Flitwick',
@@ -35,15 +35,15 @@ function generarCursos() {
         cursoCard.className = 'col-md-4';
 
         const cursoContent = `
-      <div class="card h-100" data-bs-toggle="modal" data-bs-target="#curso-modal" onclick="mostrarCurso(${curso.id})">
-        <img src="${curso.imagen}" class="card-img-top w-100" style="object-fit: cover; height: 200px;" alt="${curso.titulo}">
-        <div class="card-body">
-          <span style="color: #666666;">${curso.id}</span>
-          <h5 class="card-title fw-bold">${curso.titulo}</h5>
-          <p class="card-text">${curso.instructor}</p>
+        <div class="card h-100" data-bs-toggle="modal" data-bs-target="#curso-modal" onclick="mostrarCurso('${curso.id}')">
+          <img src="${curso.imagen}" class="card-img-top w-100" style="object-fit: cover; height: 200px;" alt="${curso.titulo}">
+          <div class="card-body">
+            <span style="color: #666666;">${curso.id}</span>
+            <h5 class="card-title fw-bold">${curso.titulo}</h5>
+            <p class="card-text">${curso.instructor}</p>
+          </div>
         </div>
-      </div>
-    `;
+      `;
 
         cursoCard.innerHTML = cursoContent;
         cursosContainer.appendChild(cursoCard);
@@ -60,14 +60,14 @@ function mostrarCurso(cursoId) {
     modalTitle.textContent = curso.titulo;
 
     modalContent.innerHTML = `
-    <img src="${curso.imagen}" class="card-img-top w-100" style="object-fit: cover; height: 300px;" alt="${curso.titulo}">
-    <h6>Descripción del curso:</h6>
-    <p>${curso.descripcion}</p>
-    <h6>Contenido del curso:</h6>
-    ${generarUnidades(curso.unidades)}
-    <h6>Información adicional:</h6>
-    <p>Aquí puedes agregar cualquier información adicional que desees mostrar sobre el curso.</p>
-  `;
+  <img src="${curso.imagen}" class="card-img-top w-100" style="object-fit: cover; height: 300px;" alt="${curso.titulo}">
+  <h6>Descripción del curso:</h6>
+  <p>${curso.descripcion}</p>
+  <h6>Contenido del curso:</h6>
+  ${generarUnidades(curso.unidades)}
+  <h6>Información adicional:</h6>
+  <p>Aquí puedes agregar cualquier información adicional que desees mostrar sobre el curso.</p>
+`;
 
     // Mostrar el modal
     const cursoModal = new bootstrap.Modal(document.getElementById('curso-modal'));
@@ -82,13 +82,13 @@ function generarUnidades(unidades) {
         const detallesContent = generarDetalles(unidad.detalles);
 
         const unidadContent = `
-      <div class="unidad">
-        <div class="unidad-titulo" onclick="mostrarContenido('unidad-${unidad.titulo}')">${unidad.titulo}</div>
-        <div class="unidad-contenido" id="unidad-${unidad.titulo}" style="display: none;">
-          ${detallesContent}
+        <div class="unidad">
+          <div class="unidad-titulo" onclick="mostrarContenido('unidad-${unidad.titulo}')">${unidad.titulo}</div>
+          <div class="unidad-contenido" id="unidad-${unidad.titulo}" style="display: none;">
+            ${detallesContent}
+          </div>
         </div>
-      </div>
-    `;
+      `;
 
         unidadesContent += unidadContent;
     });
@@ -102,8 +102,8 @@ function generarDetalles(detalles) {
 
     detalles.forEach((detalle) => {
         const detalleContent = `
-      <div class="subcontenido" data-detalle-id="detalle-${detalle}" onclick="mostrarOcultarDetalle(event)">${detalle}</div>
-    `;
+        <div class="subcontenido" data-detalle-id="detalle-${detalle}" onclick="mostrarOcultarDetalle('${detalle}')">${detalle}</div>
+      `;
 
         detallesContent += detalleContent;
     });
