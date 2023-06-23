@@ -1,51 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cursos</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-            crossorigin="anonymous"
-        />
-        <link href="css/style.css" rel="stylesheet" />
 
-        <script src="cargar-componentes.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+    <link href="css/style.css" rel="stylesheet" />
 
-    <body>
+    <script src="cargar-componentes.js"></script>
+    <script src="cursos.js"></script>
+</head>
 
-        <div id="header-container" style="border-bottom: solid #FF9000;"></div>
+<body style="background-color: lightgray;">
+
+    <div id="header-container" style="border-bottom: solid #FF9000;"></div>
 
 
 
 
-        <main>
+    <main>
+        <!-- Aqui se escribe el body causasss -->
+        <div class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Aquí puedes agregar tus cursos como cards -->
+                <div class="col-md-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#vistaRapidaModal">
+                        <img src="img/cursos/encantamientos2.jpg" class="card-img-top w-100"
+                            style="object-fit: cover; height: 200px;" alt="Curso 1">
+                        <div class="card-body">
+                            <span style="color: #666666;">2023_1_SJ_PFC040_23944016_PCT</span>
+                            <h5 class="card-title fw-bold">Encantamientos avanzados</h5>
+                            <p class="card-text">Filius Flitwick</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#vistaRapidaModal">
+                        <img src="img/cursos/encantamientos2.jpg" class="card-img-top w-100"
+                            style="object-fit: cover; height: 200px;" alt="Curso 1">
+                        <div class="card-body">
+                            <span style="color: #666666;">2023_1_SJ_PFC040_23944016_PCT</span>
+                            <h5 class="card-title fw-bold">Encantamientos avanzados</h5>
+                            <p class="card-text">Filius Flitwick</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agrega más cards de cursos aquí -->
+            </div>
 
-        </main>
+
+            <!-- Modals -->
+            <div class="modal fade modal-lg" id="vistaRapidaModal" tabindex="-1" aria-labelledby="vistaRapidaModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="vistaRapidaModalLabel">Encantamientos avanzados</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <img src="img/cursos/encantamientos2.jpg" class="card-img-top w-100"
+                            style="object-fit: cover; height: 300px;" alt="Curso 1">
+
+                        <div class="modal-body">
+                            <h6>Descripción del curso:</h6>
+                            <p>Esta es la descripción completa del curso de Encantamientos avanzados. Aquí puedes
+                                proporcionar detalles, objetivos, requisitos y cualquier otra información relevante
+                                sobre el curso.</p>
+                            <h6>Contenido del curso:</h6>
+                            <div class="unidad">
+                                <div class="unidad-titulo" onclick="mostrarContenido('unidad1')">Unidad 1: Introducción
+                                </div>
+                                <div class="unidad-contenido" id="unidad1">
+                                    <div class="subcontenido" onclick="mostrarDetalle('detalle1')">Detalles 1</div>
+                                    <div class="subcontenido" onclick="mostrarDetalle('detalle2')">Detalles 2</div>
+                                    <div class="subcontenido" onclick="mostrarDetalle('detalle3')">Detalles 3</div>
+                                </div>
+                            </div>
+                            <div class="unidad">
+                                <div class="unidad-titulo" onclick="mostrarContenido('unidad2')">Unidad 2: Tema 2</div>
+                                <div class="unidad-contenido" id="unidad2">
+                                    <div class="subcontenido" onclick="mostrarDetalle('detalle4')">Detalles 4</div>
+                                    <div class="subcontenido" onclick="mostrarDetalle('detalle5')">Detalles 5</div>
+                                </div>
+                            </div>
+                            <div id="detalle1" style="display: none;">Contenido del detalle 1</div>
+                            <div id="detalle2" style="display: none;">Contenido del detalle 2</div>
+                            <div id="detalle3" style="display: none;">Contenido del detalle 3</div>
+                            <div id="detalle4" style="display: none;">Contenido del detalle 4</div>
+                            <div id="detalle5" style="display: none;">Contenido del detalle 5</div>
+                            <h6>Información adicional:</h6>
+                            <p>Aquí puedes agregar cualquier información adicional que desees mostrar sobre el curso.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
 
 
-        <div id="footer-container"></div>
+    <div id="footer-container"></div>
 
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-            crossorigin="anonymous"
-        ></script>
-        <script>
-            // Cargar los componentes en los contenedores correspondientes
-            loadComponent("header.html", "header-container", "navbar-cursos","active");
-            loadComponent("footer.html", "footer-container", "");
-        </script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <script>
+        // Cargar los componentes en los contenedores correspondientes
+        loadComponent("header.html", "header-container", "navbar-cursos", "active");
+        loadComponent("footer.html", "footer-container", "");
+
+    </script>
+</body>
+
 </html>
