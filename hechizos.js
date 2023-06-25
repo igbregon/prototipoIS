@@ -1,5 +1,4 @@
 //ARRAY DE LOS HECHIZOS
-
 const hechizos = [
 
     {
@@ -59,7 +58,7 @@ const hechizos = [
         tipo: "especial"
     },
 ]
-
+//div donde irán los hechizos
 const contenedorHechizos = document.querySelector("#contenedorHechizos");
 
 function cargarHechizos() {
@@ -67,6 +66,7 @@ function cargarHechizos() {
     hechizos.forEach(hechizo => {
         const div = document.createElement("div");
         div.classList.add("hechizo")
+        //formula para insertar el HTML
         div.innerHTML = `
         <div class="row">
             <div
