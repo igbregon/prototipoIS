@@ -42,14 +42,14 @@ loginForm.addEventListener('submit', (e) => {
 const userRole = localStorage.getItem('role');
 
 // Verificar si el usuario es un administrador
-if (userRole === 'admin') {
-    // Mostrar contenido exclusivo para el administrador
-    // Por ejemplo, los elementos de administración de hechizos, cursos, etc.
-} else if (userRole === 'alumno') {
-    // Mostrar contenido exclusivo para el alumno
-    // Por ejemplo, los elementos de hechizos, cursos del alumno, etc.
-} else {
-    // El usuario no ha iniciado sesión o no tiene un rol válido
-    // Redireccionar al formulario de inicio de sesión u otra página adecuada
-    window.location.href = 'login.html';
-}
+// if (userRole === 'admin') {
+//     // Mostrar contenido exclusivo para el administrador
+//     // Por ejemplo, los elementos de administración de hechizos, cursos, etc.
+// } else if (userRole === 'alumno') {
+//     // Mostrar contenido exclusivo para el alumno
+//     // Por ejemplo, los elementos de hechizos, cursos del alumno, etc.
+// } else {
+//     // El usuario no ha iniciado sesión o no tiene un rol válido
+//     // Redireccionar al formulario de inicio de sesión u otra página adecuada
+//     window.location.href = 'login.html';
+// }
