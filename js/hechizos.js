@@ -59,9 +59,11 @@ const hechizos = [
     },
 ]
 //div donde irán los hechizos
-const contenedorHechizos = document.querySelector("#contenedorHechizos");
 
 function cargarHechizos() {
+    const contenedorHechizos = document.querySelector("#contenedorHechizos");
+    contenedorHechizos.innerHTML = '';
+
 
     hechizos.forEach(hechizo => {
         const div = document.createElement("div");
@@ -98,28 +100,49 @@ function cargarHechizos() {
 }
 
 cargarHechizos();
+cargarHechizos2();
+function cargarHechizos2() {
+    const contenedorHechizos = document.querySelector("#contenedorHechizos");
 
-{/* <div
-class="card rounded-0 d-flex align-items-center"
-style="width: 18rem"
->
-<img
-    src="img/hechizos/HM_Expelliarmus.webp"
-    class="card-img-top mt-4 mb-2"
-    style="width: 75%"
-    alt="..."
-/>
-<div class="card-body row row-cols-1">
-    <h5 class="card-title" style="font-weight: bold">
-        Expelliarmus
-    </h5>
-    <p class="card-text">Hechizo desarmador</p>
-    <a href="#" class="btn btn-primary mt-3 rounded-0"
-        >Aprender</a
-    >
-</div>
-</div> */}
 
+    if (localStorage.getItem('hechizos')) {
+        // Obtener los cursos almacenados en el localStorage
+        const cursosLocalStorage = JSON.parse(localStorage.getItem('hechizos'));
+
+        cursosLocalStorage.forEach((hechizo) => {
+            const div = document.createElement("div");
+            div.classList.add("hechizo")
+            //formula para insertar el HTML
+            div.innerHTML = `
+        <div class="row">
+            <div
+                    class="card mx-2 rounded-0 d-flex align-items-center"
+                    style="width: 18rem"
+                    id="${hechizo.id}"
+                >
+                    <img
+                        src="${hechizo.imagen}"
+                        class="card-img-top mt-4 mb-2"
+                        style="width: 75%"
+                        alt="..."
+                    />
+                    <div class="card-body row ">
+                        <h5 class="card-title" style="font-weight: bold">
+                            ${hechizo.nombre}
+                        </h5>
+                        <p class="card-text">${hechizo.descripcion}</p>
+                        <a href="#" class="btn btn-primary mt-3 rounded-0 "
+                            >Aprender</a
+                        >
+                    </div>
+            </div>
+        </div>
+        `;
+
+            contenedorHechizos.append(div);
+        })
+    }
+}
 
 // Formula de filtrar hechizos
 //para los botones check
@@ -249,4 +272,47 @@ curativoButton.addEventListener("click", () => {
     especialesFilter.checked = false;
     curativoFilter.checked = true;
     filtrarHechizos();
+});
+
+const agregarHechizoForm = document.getElementById('agregar-hechizo-form');
+
+// Agrega un evento de escucha para el envío del formulario
+agregarHechizoForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Obtén los valores del formulario
+    const hechizoId = document.getElementById('hechizo-id').value;
+    const hechizoImagen = document.getElementById('hechizo-imagen').value;
+    const hechizoNombre = document.getElementById('hechizo-nombre').value;
+    const hechizoDescripcion = document.getElementById('hechizo-descripcion').value;
+    const hechizoTipo = document.getElementById('hechizo-tipo').value;
+
+
+    // Crea el objeto de hechizo
+    const nuevoHechizo = {
+        id: hechizoId,
+        imagen: hechizoImagen,
+        nombre: hechizoNombre,
+        descripcion: hechizoDescripcion,
+        tipo: hechizoTipo,
+    };
+
+    // Verificar si hay datos de cursos en el localStorage
+    let hechizosLocalStorage = [];
+    if (localStorage.getItem('hechizos')) {
+        hechizosLocalStorage = JSON.parse(localStorage.getItem('hechizos'));
+    }
+
+    // Agrega el nuevo curso al array de cursos
+    hechizosLocalStorage.push(nuevoHechizo);
+
+    // Almacena los datos actualizados en el localStorage
+    localStorage.setItem('hechizos', JSON.stringify(hechizosLocalStorage));
+
+    // Genera nuevamente el contenido de los cursos para mostrar el nuevo curso en la página
+    cargarHechizos();
+    cargarHechizos2();
+
+    // Restablece los valores del formulario
+    agregarHechizoForm.reset();
 });
